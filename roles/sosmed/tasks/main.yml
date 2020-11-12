@@ -1,0 +1,24 @@
+- name: create folder sosmed
+  file:
+    path: /var/www/html/sosial-media/
+    state: directory
+    mode: '0755'
+- name: install git
+  apt:
+    name: git
+- name: Clone a repo with separate git directory
+  git:
+    repo: https://github.com/sdcilsy/sosial-media.git
+    dest: /var/www/html/sosial-media
+- name: copy config nginx
+  template:
+    src: sosmed.conf
+    dest: /etc/nginx/sites-enabled/
+- name: copy config sosmed
+  template:
+    src: config.php
+    dest: /var/www/html/sosial-media
+  notify:
+  - Restart nginx
+  - Restart php7.2-fpm
+

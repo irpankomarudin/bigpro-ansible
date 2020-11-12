@@ -1,0 +1,8 @@
+- name: tunggu sekitar 3 menit
+  hosts: bastion
+  remote_user: ubuntu
+  become: yes
+  become_method: sudo
+  roles:
+    - ingress
+    - landing-pages

@@ -1,0 +1,5 @@
+- name: generate ssh
+  shell: ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa <<< y
+  args:
+    executable: /bin/bash
+#masuk direktory /root/.ssh/

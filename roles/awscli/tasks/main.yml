@@ -1,0 +1,12 @@
+- name: install awscli
+  apt:
+    name: awscli
+    update_cache: yes
+- name: aws configure
+  template:
+    src: credentials
+    dest: /root/.aws/
+- name: aws configure
+  template:
+    src: config
+    dest: /root/.aws/

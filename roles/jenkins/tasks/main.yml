@@ -1,0 +1,23 @@
+- name: download jenkins
+  shell: wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+  args:
+    executable: /bin/bash
+- name: install jenkins
+  shell: sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+  args:
+    executable: /bin/bash
+- name: update 
+  apt:
+    update_cache: yes
+- name: install dependenci jenkins    
+  apt:
+    name: openjdk-8-jdk
+    update_cache: yes
+- name: install dependenci jenkins    
+  apt:
+    name: jenkins
+    update_cache: yes     
+- name: start jenkins
+  service:
+    name: jenkins
+    state: started

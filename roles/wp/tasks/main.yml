@@ -1,0 +1,21 @@
+- name: Create a directory wordpress if it does not exist
+  file:
+    path: /var/www/html/wordpress/
+    state: directory
+    mode: '0755'
+- name: Download wordpress
+  get_url:
+    url: http://wordpress.org/latest.zip
+    dest: /tmp/latest.zip
+- name: Extract wordpress.zip
+  unarchive:
+    src: /tmp/latest.zip
+    dest: /var/www/html/
+    remote_src: yes
+- name: copy wpconfig
+  template:
+    src: wp-config.php
+    dest: /var/www/html/wordpress/
+  notify:
+  - Restart nginx
+  - Restart php7.2-fpm

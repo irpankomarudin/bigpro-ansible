@@ -1,0 +1,7 @@
+- name: install kops
+  get_url:
+    url: https://github.com/kubernetes/kops/releases/download/v1.18.1/kops-linux-amd64
+    dest: /usr/bin/
+    mode: '0755'
+- name: rename kops
+  command: mv /usr/bin/kops-linux-amd64 /usr/bin/kops

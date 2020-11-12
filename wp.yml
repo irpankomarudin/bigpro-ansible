@@ -1,0 +1,9 @@
+- name: Install WordPress
+  hosts: bastion
+  remote_user: ubuntu
+  become: yes
+  become_method: sudo
+  roles:
+    - nginx
+    - php
+    - wp

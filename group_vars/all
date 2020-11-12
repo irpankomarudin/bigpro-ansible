@@ -1,0 +1,17 @@
+# WordPress database settings, change with correct value
+wp_db_name: 
+wp_db_user: 
+wp_db_password: 
+wp_db_hostname: 
+# config pesbuk
+pesbuk_db_name: 
+pesbuk_db_user: 
+pesbuk_db_password: 
+pesbuk_db_hostname: 
+# aws cli
+secret_key: 
+region: 
+# export kops
+bucket_name:  
+state_store: 
+cluster_name: 

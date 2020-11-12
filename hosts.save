@@ -1,0 +1,6 @@
+[bastion]
+13.212.115.80 ansible_user=ubuntu ansible_ssh_private_key_file=/home/rizal/sg.pem
+#file ssh chmod 400
+[bastion]
+13.212.115.80 ansible_user=ubuntu ansible_ssh_private_key_file=/home/rizal/sg.pem
+#file ssh chmod 400

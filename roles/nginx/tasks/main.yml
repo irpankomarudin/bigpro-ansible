@@ -1,0 +1,13 @@
+- name: install nginx
+  apt:
+    name: nginx
+    state: present
+- name: copy config
+  copy:
+    src: ../templates/wp.conf
+    dest: /etc/nginx/sites-enabled/
+- name: start nginx
+  service:
+    name: nginx
+    state: started
+ 

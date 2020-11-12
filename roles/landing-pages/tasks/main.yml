@@ -1,0 +1,4 @@
+- name: deploying Landing-pages
+  shell: kubectl apply -f https://raw.githubusercontent.com/Rizal-I/LandingPage/master/landing.yml
+  args:
+    executable: /bin/bash

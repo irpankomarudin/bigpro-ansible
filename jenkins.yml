@@ -1,0 +1,7 @@
+- name: Tunggu sekitar 10 menit
+  hosts: bastion
+  remote_user: ubuntu
+  become: yes
+  become_method: sudo
+  roles:
+    - jenkins
